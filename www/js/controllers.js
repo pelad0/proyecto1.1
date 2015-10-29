@@ -67,7 +67,7 @@ angular.module('starter.controllers', [])
         lng: -66.33679760000,
         zoom: 16
       },
-     // markers: objMarkers,
+     markers: objMarkers,
 
       default: {
         scrollWheelZoom: false
