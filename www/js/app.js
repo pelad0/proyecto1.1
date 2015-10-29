@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers'])
+angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -28,8 +28,7 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'MapaCtrl'
+    templateUrl: 'templates/menu.html'
   })
 
   .state('app.search', {
@@ -49,11 +48,11 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers'])
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.mapa', {
+      url: '/mapa',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/mapa.html',
           controller: 'MapaCtrl'
         }
       }
@@ -69,5 +68,5 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/mapa');
 });
