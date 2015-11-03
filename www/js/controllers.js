@@ -40,6 +40,9 @@ angular.module('starter.controllers', [])
       }, 1000);
     };
   })
+  
+  
+  
   .controller('MapaCtrl', function ($scope, Posiciones) {
 //     $scope.puntero = 1;
     var objMarkers = {};
@@ -77,7 +80,7 @@ angular.module('starter.controllers', [])
 
   
 
-  .controller('PlaylistCtrl', function ($scope, $stateParams) {
+  .controller('DenunciasCtrl', function ($scope) {
   });
 
 

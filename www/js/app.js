@@ -28,7 +28,9 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html'
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+    
   })
 
   .state('app.search', {
@@ -40,14 +42,6 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
     .state('app.mapa', {
       url: '/mapa',
       views: {
@@ -57,16 +51,22 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
         }
       }
     })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+    
+    .state('app.denuncias',{
+      url:'/denuncias',
+      views:{
+        'menuContent':{
+          templateUrl: 'templates/denuncias.html',
+          controller: 'DenunciasCtrl'
+          
+        }
       }
-    }
-  });
+    });
+    
+    
+    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/mapa');
 });
+
+        
