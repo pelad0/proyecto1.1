@@ -61,7 +61,19 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
           
         }
       }
+    })
+    
+    .state('app.registro',{
+      url:'/registro',
+      views:{
+        'menuContent':{
+          templateUrl:'templates/registro.html',
+          controller: 'RegistroCtrl'
+      
+       }
+      }
     });
+    
     
     
     

@@ -91,6 +91,10 @@ angular.module('starter.controllers', [])
     
       })
     
+  })
+  
+  .controller('RegistroCtrl', function ($scope){
+    
   });
 
 
