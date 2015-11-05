@@ -84,11 +84,13 @@ angular.module('starter.controllers', [])
     
     
     
-      $http.get("http://app.eatnow.com.do/regions").success(function(data){
+      //$http.get("http://app.eatnow.com.do/regions").success(function(data){
         
-            console.log(data);
-        
-    
+        //    console.log(data);
+     //})
+      
+      $http.post('http://demo2.avec.com.do/denuncia').succes(function(data){
+          console.log(data);
       })
     
   })
@@ -108,7 +110,11 @@ angular.module('starter.controllers', [])
       }
     
     
-  });
+  })
+  
+  
+  
+  ;
 
 
  
