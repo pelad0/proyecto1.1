@@ -8,3 +8,11 @@ textarea {
   border-bottom: 1px solid #eee;
   
 }
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
