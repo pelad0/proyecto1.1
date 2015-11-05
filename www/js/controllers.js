@@ -40,11 +40,11 @@ angular.module('starter.controllers', [])
       }, 1000);
     };
   })
-  
-  
-  
+
+
+
   .controller('MapaCtrl', function ($scope, Posiciones) {
-//     $scope.puntero = 1;
+    //     $scope.puntero = 1;
     var objMarkers = {};
     var pos = Posiciones.all();
 
@@ -54,23 +54,23 @@ angular.module('starter.controllers', [])
     }
    
    
-//     $scope.anterior = function () {
-//       if ($scope.puntero > 1) {
-//         $scope.puntero--;
-//       }
-//     };
-//     $scope.sgte = function () {
-//       if ($scope.puntero < 3) {
-//         $scope.puntero++;
-//       }
-//     };
+    //     $scope.anterior = function () {
+    //       if ($scope.puntero > 1) {
+    //         $scope.puntero--;
+    //       }
+    //     };
+    //     $scope.sgte = function () {
+    //       if ($scope.puntero < 3) {
+    //         $scope.puntero++;
+    //       }
+    //     };
     angular.extend($scope, {
       center: {
         lat: -33.30222020000,
         lng: -66.33679760000,
         zoom: 16
       },
-     markers: objMarkers,
+      markers: objMarkers,
 
       default: {
         scrollWheelZoom: false
@@ -84,36 +84,60 @@ angular.module('starter.controllers', [])
     
     
     
-      //$http.get("http://app.eatnow.com.do/regions").success(function(data){
+    //$http.get("http://app.eatnow.com.do/regions").success(function(data){
         
-        //    console.log(data);
-     //})
+    //    console.log(data);
+    //})
       
-      $http.post('http://demo2.avec.com.do/denuncia').success(function(data){
-          console.log(data);
-          
-          
-      })
+    $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
+      console.log(data);
+      var posiciones= {};
       
-      
-    
-  })
-  
-  .controller('RegistroCtrl', function ($scope, user){
-    
-        $scope.registro=function(us, pass, pass2, em){
+      for (var i = 0; i < data.length; i++) {
         
-        user.esString(us);
-        user.passOk(pass,pass2);
-        user.emailOk(em);
-        console.log(us);
-        console.log(pass);
-        console.log(pass2);
-        console.log(em);
-       
+        posiciones ["marker" + i]  = {
+          name: data[i]._id,
+          lat: parseFloat(data[i].pos.split(',')[0]),
+          lng: parseFloat(data[i].pos.split(',')[1]),
+          message: data[i].descripcion,
+          focus: false,
+          dragable: false
+        };
       }
-    
-    
+       
+      //$scope.markers = posiciones;
+      console.log(posiciones);
+      $scope.markers = posiciones;
+    })
+    angular.extend($scope, {
+        center: {
+          lat: -33.30222020000,
+          lng: -66.33679760000,
+          zoom: 16
+        },
+        markers: {},
+  
+        default: {
+          scrollWheelZoom: false
+        }
+    });
+  })
+
+  .controller('RegistroCtrl', function ($scope, user) {
+
+    $scope.registro = function (us, pass, pass2, em) {
+
+      user.esString(us);
+      user.passOk(pass, pass2);
+      user.emailOk(em);
+      console.log(us);
+      console.log(pass);
+      console.log(pass2);
+      console.log(em);
+
+    }
+
+
   });
 
 

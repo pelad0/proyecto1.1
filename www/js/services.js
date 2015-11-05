@@ -1,7 +1,7 @@
-angular.module('starter.services',[])
+angular.module('starter.services', [])
 
 
-.factory('Posiciones', function () {//inicio services posiciones
+  .factory('Posiciones', function () {//inicio services posiciones
     var posiciones = [{
       name: 'p1',
       lat: -33.30222020000,
@@ -10,8 +10,8 @@ angular.module('starter.services',[])
       focus: true,
       draggable: true
     }];
-    
-    
+
+
     return {
       all: function () {
         return posiciones;
@@ -29,8 +29,8 @@ angular.module('starter.services',[])
       }
     };
   })
-  
-    .factory('user', function () {
+
+  .factory('user', function () {
     return {
       esString: function (nombre) {
         var expRegNom = /^\w{4,}$/;
@@ -47,7 +47,7 @@ angular.module('starter.services',[])
       },
       emailOk: function (email) {
         var expRegEm = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
-        if(!expRegEm.test(email)){
+        if (!expRegEm.test(email)) {
           alert("El formato de email no es valido");
           return;
         }
@@ -57,6 +57,8 @@ angular.module('starter.services',[])
 
     }
   });
+  
+  
   
   
   
