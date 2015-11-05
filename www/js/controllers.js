@@ -80,8 +80,20 @@ angular.module('starter.controllers', [])
 
   
 
-  .controller('DenunciasCtrl', function ($scope) {
+  .controller('DenunciasCtrl', function ($scope, $http) {
+    
+    
+    
+      $http.get("http://app.eatnow.com.do/regions").success(function(data){
+        
+            console.log(data);
+        
+    
+      })
+    
   });
 
 
  
+
+    
