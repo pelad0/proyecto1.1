@@ -89,7 +89,7 @@ angular.module('starter.controllers', [])
         //    console.log(data);
      //})
       
-      $http.post('http://demo2.avec.com.do/denuncia').succes(function(data){
+      $http.post('http://demo2.avec.com.do/denuncia').success(function(data){
           console.log(data);
       })
     
@@ -110,11 +110,7 @@ angular.module('starter.controllers', [])
       }
     
     
-  })
-  
-  
-  
-  ;
+  });
 
 
  
