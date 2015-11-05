@@ -8,17 +8,17 @@
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Usuario</span>
-				<input type="text" placeholder="User" ng-model="userName">
+				<input type="text" placeholder="User" ng-model="user">
 			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Contraseña</span>
-				<input type="password" placeholder="Password" ng-model="userKey">
+				<input type="password" placeholder="Password" ng-model="pass">
 			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Confirmar Contraseña</span>
-				<input type="password" placeholder="Password Confirm" ng-model="userKeyConfirm">
+				<input type="password" placeholder="Password Confirm" ng-model="passConfirm">
 			</label>
 
 			<label class="item item-input item-stacked-label">
@@ -26,7 +26,7 @@
 				<input type="text" placeholder="example@example.com" ng-model="email">
 			</label>
 			<label class="item">
-				<button class="button button-block button-positive icon ion-person-add icon-right" type="submit" ng-click="registro()">Registrarse</button>
+				<button class="button button-block button-positive icon ion-person-add icon-right" type="submit" ng-click="registro(user,pass,passConfirm,email)">Registrarse</button>
 			</label>
 		</div>
 
