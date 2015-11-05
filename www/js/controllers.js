@@ -91,7 +91,11 @@ angular.module('starter.controllers', [])
       
       $http.post('http://demo2.avec.com.do/denuncia').success(function(data){
           console.log(data);
+          
+          
       })
+      
+      
     
   })
   
