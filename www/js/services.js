@@ -28,7 +28,38 @@ angular.module('starter.services',[])
         return null;
       }
     };
+  })
+  
+    .factory('user', function () {
+    return {
+      esString: function (nombre) {
+        var expRegNom = /^\w{4,}$/;
+        if (!expRegNom.test(nombre)) {
+          alert("El Usuario debe contener al menos 4 caracteres.")
+          return;
+        }
+      },
+      passOk: function (pass1, pass2) {
+        if (pass1 !== pass2) {
+          alert("Las contraseñas no coinciden")
+          return;
+        }
+      },
+      emailOk: function (email) {
+        var expRegEm = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+        if(!expRegEm.test(email)){
+          alert("El formato de email no es valido");
+          return;
+        }
+      }
+
+
+
+    }
   });
+  
+  
+  
   
   
   //fin services posiciones

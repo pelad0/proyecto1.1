@@ -93,7 +93,20 @@ angular.module('starter.controllers', [])
     
   })
   
-  .controller('RegistroCtrl', function ($scope){
+  .controller('RegistroCtrl', function ($scope, user){
+    
+        $scope.registro=function(us, pass, pass2, em){
+        
+        user.esString(us);
+        user.passOk(pass,pass2);
+        user.emailOk(em);
+        console.log(us);
+        console.log(pass);
+        console.log(pass2);
+        console.log(em);
+       
+      }
+    
     
   });
 

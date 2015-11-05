@@ -4,30 +4,31 @@
 
 	</ion-header-bar>
 	<ion-content>
-		<form ng-submit="">
-			<div class="list">
-				<label class="item item-input">
-					<span class="input-label">Usuario</span>
-					<input type="text" ng-model="">
-				</label>
-				<label class="item item-input">
-					<span class="input-label">Contraseña</span>
-					<input type="password" ng-model="">
-				</label>
-				<label class="item item-input">
-					<span class="input-label">Confirme Contraseña</span>
-					<input type="password" ng-model="">
-				</label>
-				<label class="item item-input">
-					<span class="input-label">Mail</span>
-					<input type="text" ng-model="">
-				</label>
-				<label class="item">
-					<button class="button button-block button-positive icon ion-person-add icon-right" type="submit">Registrarse</button>
-				</label>
-			</div>
+		<div class="list">
 
-		</form>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Usuario</span>
+				<input type="text" placeholder="User" ng-model="userName">
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Contraseña</span>
+				<input type="password" placeholder="Password" ng-model="userKey">
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Confirmar Contraseña</span>
+				<input type="password" placeholder="Password Confirm" ng-model="userKeyConfirm">
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">E-mail</span>
+				<input type="text" placeholder="example@example.com" ng-model="email">
+			</label>
+			<label class="item">
+				<button class="button button-block button-positive icon ion-person-add icon-right" type="submit" ng-click="registro()">Registrarse</button>
+			</label>
+		</div>
 
 	</ion-content>
 </ion-view>
