@@ -33,11 +33,11 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
     
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.acerca', {
+    url: '/acerca',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/acerca.html'
       }
     }
   })
