@@ -72,11 +72,11 @@ angular.module('starter.controllers', [])
   .controller('DenunciasCtrl', function ($scope, $http) {
     var posiciones = {};
     $scope.markers = posiciones;
-    $scope.center = {
+    /*$scope.center = {
       lat: 18.486057499999998,
       lng: -69.9312117,
       zoom: 12
-    };
+    };*/
     $scope.default = {
       scrollWheelZoom: false
     }
@@ -100,17 +100,17 @@ angular.module('starter.controllers', [])
       $scope.markers = angular.copy(posiciones);
     })
     
-    /* angular.extend($scope, {
+     angular.extend($scope, {
          center: {
            lat: 18.486057499999998,
            lng: -69.9312117,
-           zoom: 16
+           zoom: 10
          },
          markers: posiciones,
          default: {
            scrollWheelZoom: false
          }
-     });*/
+     });
   })
 
   .controller('RegistroCtrl', function ($scope, user) {
