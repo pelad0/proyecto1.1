@@ -52,18 +52,7 @@ angular.module('starter.controllers', [])
       var p = pos[i];
       objMarkers[p.name] = p;//
     }
-   
-   
-    //     $scope.anterior = function () {
-    //       if ($scope.puntero > 1) {
-    //         $scope.puntero--;
-    //       }
-    //     };
-    //     $scope.sgte = function () {
-    //       if ($scope.puntero < 3) {
-    //         $scope.puntero++;
-    //       }
-    //     };
+
     angular.extend($scope, {
       center: {
         lat: -33.30222020000,
@@ -81,20 +70,11 @@ angular.module('starter.controllers', [])
   
 
   .controller('DenunciasCtrl', function ($scope, $http) {
-    
-    
-    
-    //$http.get("http://app.eatnow.com.do/regions").success(function(data){
-        
-    //    console.log(data);
-    //})
-      
-    $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
-      console.log(data);
-      var posiciones= {};
-      
+     var posiciones= {};
+     $scope.markers=posiciones;
+     $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
+      //console.log(data);
       for (var i = 0; i < data.length; i++) {
-        
         posiciones ["marker" + i]  = {
           name: data[i]._id,
           lat: parseFloat(data[i].pos.split(',')[0]),
@@ -104,19 +84,15 @@ angular.module('starter.controllers', [])
           dragable: false
         };
       }
-       
-      //$scope.markers = posiciones;
-      console.log(posiciones);
       $scope.markers = posiciones;
     })
     angular.extend($scope, {
         center: {
-          lat: -33.30222020000,
-          lng: -66.33679760000,
+          lat: 18.486057499999998,
+          lng: -69.9312117,
           zoom: 16
         },
-        markers: {},
-  
+        markers: posiciones,
         default: {
           scrollWheelZoom: false
         }
