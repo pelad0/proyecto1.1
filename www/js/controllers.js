@@ -70,33 +70,47 @@ angular.module('starter.controllers', [])
   
 
   .controller('DenunciasCtrl', function ($scope, $http) {
-     var posiciones= {};
-     $scope.markers=posiciones;
-     $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
+    var posiciones = {};
+    $scope.markers = posiciones;
+    $scope.center = {
+      lat: 18.486057499999998,
+      lng: -69.9312117,
+      zoom: 12
+    };
+    $scope.default = {
+      scrollWheelZoom: false
+    }
+
+    $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
       //console.log(data);
       for (var i = 0; i < data.length; i++) {
-        posiciones ["marker" + i]  = {
-          name: data[i]._id,
-          lat: parseFloat(data[i].pos.split(',')[0]),
-          lng: parseFloat(data[i].pos.split(',')[1]),
-          message: data[i].descripcion,
-          focus: false,
-          dragable: false
-        };
-      }
-      $scope.markers = posiciones;
-    })
-    angular.extend($scope, {
-        center: {
-          lat: 18.486057499999998,
-          lng: -69.9312117,
-          zoom: 16
-        },
-        markers: posiciones,
-        default: {
-          scrollWheelZoom: false
+
+        if (!isNaN(parseFloat(data[i].pos.split(',')[0])) && !isNaN(parseFloat(data[i].pos.split(',')[1]))) {
+          posiciones["marker" + i] = {
+            //name: data[i]._id,
+            lat: parseFloat(data[i].pos.split(',')[0]),
+            lng: parseFloat(data[i].pos.split(',')[1]),
+            message: data[i].descripcion,
+            focus: false,
+            draggable: false
+          };
         }
-    });
+      }
+      console.log(posiciones)
+      $scope.markers = angular.copy(posiciones);
+    })
+    
+    /* angular.extend($scope, {
+         center: {
+           lat: 18.486057499999998,
+           lng: -69.9312117,
+           zoom: 16
+         },
+         markers: posiciones,
+         default: {
+           scrollWheelZoom: false
+         }
+     });*/
   })
 
   .controller('RegistroCtrl', function ($scope, user) {
