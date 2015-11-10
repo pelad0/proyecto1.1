@@ -16,3 +16,7 @@ textarea {
 .float-left{
   float: left;
 }
+
+.espacio-arriba{
+  padding-top: 3em;
+}
