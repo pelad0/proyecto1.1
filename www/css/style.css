@@ -20,3 +20,7 @@ textarea {
 .espacio-arriba{
   padding-top: 3em;
 }
+
+.leaflet-top .leaflet-control{
+  margin-top: 50px;
+}
