@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     //     $scope.puntero = 1;
     var objMarkers = {};
     var pos = Posiciones.all();
-
+    $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};  
     for (var i = 0; i < pos.length; i++) {
       var p = pos[i];
       objMarkers[p.name] = p;//
@@ -80,7 +80,7 @@ angular.module('starter.controllers', [])
     $scope.default = {
       scrollWheelZoom: false
     }
-
+    $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};
     $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
       //console.log(data);
       for (var i = 0; i < data.length; i++) {
