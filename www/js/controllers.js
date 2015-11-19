@@ -54,18 +54,31 @@ angular.module('starter.controllers', [])
     }
     
     console.log(objMarkers)
-    
-    $scope.center =  {
+    angular.extend($scope, {
+      center: {
+        lat: -33.30222020000,
+        lng: -66.33679760000,
+        zoom: 16
+      },
+      markers: objMarkers,
+      tiles: { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"},//esto fue para hacer andar el mapa en el cel
+                    
+      default: {
+        scrollWheelZoom: false
+      }
+    });
+    })
+    /*$scope.center =  {
         lat: -33.30222020000,
         lng: -66.33679760000,
         zoom: 16
       };
-    $scope.markers = {};
+    $scope.markers = objMarkers;
     $scope.default = {
         scrollWheelZoom: false
       };
-     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};
-  })//fin MapaCtrl
+     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};*/
+  //fin MapaCtrl
 
   
 
