@@ -47,24 +47,24 @@ angular.module('starter.controllers', [])
     //     $scope.puntero = 1;
     var objMarkers = {};
     var pos = Posiciones.all();
-    $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};  
+    //$scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};  
     for (var i = 0; i < pos.length; i++) {
       var p = pos[i];
       objMarkers[p.name] = p;//
     }
-
-    angular.extend($scope, {
-      center: {
+    
+    console.log(objMarkers)
+    
+    $scope.center =  {
         lat: -33.30222020000,
         lng: -66.33679760000,
         zoom: 16
-      },
-      markers: objMarkers,
-
-      default: {
+      };
+    $scope.markers = {};
+    $scope.default = {
         scrollWheelZoom: false
-      }
-    });
+      };
+     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};
   })//fin MapaCtrl
 
   
