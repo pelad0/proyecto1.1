@@ -89,15 +89,16 @@ angular.module('starter.controllers', [])
     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};
     
     $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
-      //console.log(data);
+      console.log(data);
       for (var i = 0; i < data.length; i++) {
         if (!isNaN(parseFloat(data[i].pos.split(',')[0])) && !isNaN(parseFloat(data[i].pos.split(',')[1]))) {
           posiciones["marker" + i] = {
             //name: data[i]._id,
             lat: parseFloat(data[i].pos.split(',')[0]),
             lng: parseFloat(data[i].pos.split(',')[1]),
-            message: data[i].descripcion,
-            focus: false,
+            message: '<a href="   ">'+data[i].descripcion+'</a>',
+            imagen: data[i].attachs[0],
+            focus: true,
             draggable: false
           };
         }
