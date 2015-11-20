@@ -54,6 +54,7 @@ angular.module('starter.controllers', [])
     }
     
     console.log(objMarkers)
+    
     angular.extend($scope, {
       center: {
         lat: -33.30222020000,
@@ -68,16 +69,7 @@ angular.module('starter.controllers', [])
       }
     });
     })
-    /*$scope.center =  {
-        lat: -33.30222020000,
-        lng: -66.33679760000,
-        zoom: 16
-      };
-    $scope.markers = objMarkers;
-    $scope.default = {
-        scrollWheelZoom: false
-      };
-     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};*/
+    
   //fin MapaCtrl
 
   
@@ -93,11 +85,12 @@ angular.module('starter.controllers', [])
     $scope.default = {
       scrollWheelZoom: false
     }
+    
     $scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};
+    
     $http.post('http://demo2.avec.com.do/denuncia').success(function (data) {
       //console.log(data);
       for (var i = 0; i < data.length; i++) {
-
         if (!isNaN(parseFloat(data[i].pos.split(',')[0])) && !isNaN(parseFloat(data[i].pos.split(',')[1]))) {
           posiciones["marker" + i] = {
             //name: data[i]._id,
@@ -109,7 +102,9 @@ angular.module('starter.controllers', [])
           };
         }
       }
+      
       console.log(posiciones)
+      
       $scope.markers = angular.copy(posiciones);
     })
     
