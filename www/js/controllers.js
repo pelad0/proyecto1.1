@@ -96,7 +96,7 @@ angular.module('starter.controllers', [])
             //name: data[i]._id,
             lat: parseFloat(data[i].pos.split(',')[0]),
             lng: parseFloat(data[i].pos.split(',')[1]),
-            message: '<a href="detalleDenuncia.html">'+data[i].titulo+'</a>',
+            message: '<a ui-sref="detalleDenuncia">'+data[i].titulo+'</a>',
             imagen: data[i].attachs[0],
             focus: true,
             draggable: false
