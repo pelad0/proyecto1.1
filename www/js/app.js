@@ -33,6 +33,18 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
     
   })
 
+  .state('app.detalleDenuncia',{
+    url:'/detalleDenuncia',
+    views:{
+      'menuContent':{
+        templateUrl:'templates/detalleDenuncia.html'
+      }
+    }
+  })
+
+
+
+
   .state('app.acerca', {
     url: '/acerca',
     views: {
@@ -74,6 +86,7 @@ angular.module('starter', ['ionic', 'leaflet-directive', 'starter.controllers', 
       }
     });
     
+
     
     
     

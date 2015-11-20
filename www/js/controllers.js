@@ -44,10 +44,10 @@ angular.module('starter.controllers', [])
 
 
   .controller('MapaCtrl', function ($scope, Posiciones) {
-    //     $scope.puntero = 1;
+    
     var objMarkers = {};
     var pos = Posiciones.all();
-    //$scope.tiles = { url: "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"};  
+   
     for (var i = 0; i < pos.length; i++) {
       var p = pos[i];
       objMarkers[p.name] = p;//
@@ -96,7 +96,7 @@ angular.module('starter.controllers', [])
             //name: data[i]._id,
             lat: parseFloat(data[i].pos.split(',')[0]),
             lng: parseFloat(data[i].pos.split(',')[1]),
-            message: '<a href="   ">'+data[i].descripcion+'</a>',
+            message: '<a href="detalleDenuncia.html">'+data[i].titulo+'</a>',
             imagen: data[i].attachs[0],
             focus: true,
             draggable: false
